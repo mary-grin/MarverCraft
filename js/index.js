@@ -19,6 +19,8 @@ class Game {
         });
     }
     fighting(first, second) {
+        const fightBtn = document.querySelector('.fightBtn');
+        fightBtn.style.display = 'none';
         const interval = setInterval(() => {
             console.log('fight');
             first.health -= Math.round((100 - first.armour)*second.power/100);
@@ -34,8 +36,12 @@ class Game {
             disp.refresh(second);
             if (first.health == 0 || second.health == 0) {
                 clearInterval(interval);
-                const fightBtn = document.querySelector('.fight');
-                fightBtn.textContent = 'Play again';
+                const winner = first.health > second.health ? first.name : second.name;
+                const textWinner = document.createElement('p');
+                textWinner.textContent = winner + ' is the winner!';
+                textWinner.className = 'winner';
+                const main = document.querySelector('main');
+                main.appendChild(textWinner);
             }
         }, 1000);
     }
@@ -125,7 +131,7 @@ class Display {
 
         const fightBtn = document.createElement('button');
         fightBtn.textContent = 'Fight';
-        fightBtn.className = 'fight';
+        fightBtn.className = 'fightBtn';
 
         const main = document.querySelector('main');
         main.appendChild(fightBtn);
@@ -162,7 +168,7 @@ const characters = [
     new Unit('Captain America', 'https://i.pinimg.com/564x/9f/f6/d4/9ff6d4c7ce8d26a16fb9ca55342c670e.jpg', 43, 26),
     new Unit('Spider Man', 'https://i.pinimg.com/564x/a0/87/42/a08742c448e06ce24320980256e38477.jpg', 38, 28),
     new Unit('Doctor Strange', 'https://i.pinimg.com/564x/68/c9/be/68c9be968cbc771d425095356b75669b.jpg', 43, 32),
-    new Unit('Scarler Witch', 'https://i.pinimg.com/564x/e7/1f/f6/e71ff60d1d0ff42c2651d2961d1a2657.jpg', 48, 35),
+    new Unit('Scarlet Witch', 'https://i.pinimg.com/564x/e7/1f/f6/e71ff60d1d0ff42c2651d2961d1a2657.jpg', 48, 35),
     new Unit('Venom', 'https://i.pinimg.com/564x/c8/9d/df/c89ddff8b66b39945a43ac327246af1b.jpg', 39, 29),
     new Unit('Thanos', 'https://i.pinimg.com/564x/d7/07/e2/d707e20e234aaf00ed529958c6963c3d.jpg', 45, 32),
     new Unit('Star Lord', 'https://i.pinimg.com/564x/02/43/ec/0243ec8041980ca786cc3779ff8e35ed.jpg', 36, 28),
