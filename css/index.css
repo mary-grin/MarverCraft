@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+header {
+    font-size: 56px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(184, 57, 57);
+    color: #fff;
+}
+.start {
+    margin: 200px auto;
+    width: 300px;
+    height: 100px;
+    font-size: 48px;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgb(184, 57, 57);
+    border: rgb(93, 26, 26) 1px solid;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+}
+.fight {
+    margin: 0px auto;
+    width: 200px;
+    height: 70px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgb(184, 57, 57);
+    border: rgb(93, 26, 26) 1px solid;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+}
+@keyframes showCharacters {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.characters-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 50px 0;
+}
+.animation {
+    animation: showCharacters .5s linear forwards;
+}
+.character {
+    width: 200px;
+    border: 1px solid black;
+    transition: 0.5s;
+}
+.character:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+    box-shadow: 0px 0px 50px rgb(160, 160, 160);
+}
+.character img {
+    width: 100%;
+}
+.character-name {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+.character-skill {
+    text-align: center;
+}
+.choose-btn {
+    width: 100px;
+    height: 30px;
+    color: #fff;
+    background-color: rgb(184, 57, 57);
+    border: rgb(93, 26, 26) 1px solid;
+    display: block;
+    margin: 30px auto 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+.choose-btn:hover,
+.start:hover,
+.fight:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+.health {
+    background-color: rgb(19, 106, 0);
+    color: #fff;
+    text-align: end;
+    width: 100%;
+}
+.battle-field {
+    margin: 70px;
+    justify-content: center;
+    gap: 50px;
+}
