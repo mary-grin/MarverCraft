@@ -1,3 +1,4 @@
+/* eslint-disable no-magic-numbers */
 class Game {
     chooseCharacter() {
         const buttons = document.querySelectorAll('.choose-btn');
@@ -34,7 +35,7 @@ class Game {
             }
             disp.refresh(first);
             disp.refresh(second);
-            if (first.health == 0 || second.health == 0) {
+            if (first.health === 0 || second.health === 0) {
                 clearInterval(interval);
                 const winner = first.health > second.health ? first.name : second.name;
                 const textWinner = document.createElement('p');
@@ -145,7 +146,7 @@ class Display {
         console.log(health.length);
         health.forEach((el) => {
             console.log(el.id);
-            if(el.id == character.name) {
+            if(el.id === character.name) {
                 el.textContent = character.health;
                 if(character.health>=30) {
                     el.style.width = Math.round(character.health/3) + '%'; 
@@ -170,12 +171,12 @@ const characters = [
     new Unit('Doctor Strange', 'https://i.pinimg.com/564x/68/c9/be/68c9be968cbc771d425095356b75669b.jpg', 43, 32),
     new Unit('Scarlet Witch', 'https://i.pinimg.com/564x/e7/1f/f6/e71ff60d1d0ff42c2651d2961d1a2657.jpg', 48, 30),
     new Unit('Venom', 'https://i.pinimg.com/564x/c8/9d/df/c89ddff8b66b39945a43ac327246af1b.jpg', 39, 29),
-    new Unit('Thanos', 'https://i.pinimg.com/564x/d7/07/e2/d707e20e234aaf00ed529958c6963c3d.jpg', 44, 35),
+    new Unit('Thanos', 'https://i.pinimg.com/564x/d7/07/e2/d707e20e234aaf00ed529958c6963c3d.jpg', 43, 35),
     new Unit('Star Lord', 'https://i.pinimg.com/564x/02/43/ec/0243ec8041980ca786cc3779ff8e35ed.jpg', 36, 28),
     new Unit('Ant-Man', 'https://i.pinimg.com/564x/c7/0c/18/c70c183447e10ffa0ee3f270f26623fb.jpg', 36, 26),
     new Unit('Hawkeye', 'https://i.pinimg.com/564x/18/04/1a/18041ac8e8999f163d5f092a734e41eb.jpg', 34, 28),
     new Unit('Black Widow', 'https://i.pinimg.com/564x/e2/21/a4/e221a4aed0ede751e330a934268ae66b.jpg', 37, 26),
-    new Unit('Gamora', 'https://i.pinimg.com/564x/9b/1c/96/9b1c96f1ae36ca6125657d2d131b9124.jpg', 38, 28),
+    new Unit('Gamora', 'https://i.pinimg.com/564x/9b/1c/96/9b1c96f1ae36ca6125657d2d131b9124.jpg', 38, 26)
 ];
 console.log(characters);
 
